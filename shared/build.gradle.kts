@@ -1,6 +1,7 @@
 plugins {
   kotlin("multiplatform")
   id("com.android.library")
+  kotlin("plugin.serialization")
 }
 
 kotlin {
@@ -15,12 +16,14 @@ kotlin {
       baseName = "shared"
     }
   }
-
   sourceSets {
     val commonMain by getting {
       dependencies {
         implementation("io.ktor:ktor-client-core:1.6.7")
-        implementation("io.ktor:ktor-client-cio:1.6.7")
+        implementation("io.ktor:ktor-client-serialization:1.6.7")
+        implementation("org.jetbrains.kotlin:kotlin-serialization:1.6.10")
+        implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:1.3.0")
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0")
       }
     }
     val commonTest by getting {
