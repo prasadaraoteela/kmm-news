@@ -7,5 +7,5 @@ import com.kmm.news.model.Headline
  **/
 interface NewsRepository {
 
-  suspend fun fetchHeadlines(page: Int, pageSize: Int): Result<List<Headline>>
+  suspend fun fetchHeadlines(page: Int, pageSize: Int, forceReload: Boolean = false): Result<List<Headline>>
 }

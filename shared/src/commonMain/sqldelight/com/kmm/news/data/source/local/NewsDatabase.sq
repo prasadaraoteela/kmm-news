@@ -4,7 +4,7 @@ CREATE TABLE headlines (
     image_url TEXT NOT NULL,
     date TEXT NOT NULL,
     news_source TEXT NOT NULL,
-    page INTEGER DEFAULT 1
+    page INTEGER NOT NULL DEFAULT 1
 );
 
 insertHeadline:
