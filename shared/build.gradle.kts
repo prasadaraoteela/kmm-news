@@ -2,6 +2,7 @@ plugins {
   kotlin("multiplatform")
   id("com.android.library")
   kotlin("plugin.serialization")
+  id("com.squareup.sqldelight")
 }
 
 kotlin {
@@ -24,6 +25,7 @@ kotlin {
         implementation("org.jetbrains.kotlin:kotlin-serialization:1.6.10")
         implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:1.3.0")
         implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0")
+        implementation("com.squareup.sqldelight:android-driver:1.5.3")
       }
     }
     val commonTest by getting {
@@ -34,6 +36,7 @@ kotlin {
     val androidMain by getting {
       dependencies {
         implementation("io.ktor:ktor-client-android:1.6.7")
+        implementation("com.squareup.sqldelight:sqlite-driver:1.5.3")
       }
     }
     val androidTest by getting
@@ -47,6 +50,7 @@ kotlin {
       iosSimulatorArm64Main.dependsOn(this)
       dependencies {
         implementation("io.ktor:ktor-client-ios:1.6.7")
+        implementation("com.squareup.sqldelight:native-driver:1.5.3")
       }
     }
     val iosX64Test by getting
@@ -58,6 +62,12 @@ kotlin {
       iosArm64Test.dependsOn(this)
       iosSimulatorArm64Test.dependsOn(this)
     }
+  }
+}
+
+sqldelight {
+  database(name = "NewsDatabase") {
+    packageName = "com.kmm.news.data.source.local"
   }
 }
 

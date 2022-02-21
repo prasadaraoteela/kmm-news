@@ -1,0 +1,18 @@
+CREATE TABLE headlines (
+    title TEXT NOT NULL,
+    description TEXT NOT NULL,
+    image_url TEXT NOT NULL,
+    date TEXT NOT NULL,
+    news_source TEXT NOT NULL,
+    page INTEGER DEFAULT 1
+);
+
+insertHeadline:
+INSERT INTO headlines(title, description, image_url, date, news_source, page)
+VALUES(?, ?, ?, ?, ?, ?);
+
+removeHeadlines:
+DELETE FROM headlines;
+
+findAllHeadlines:
+SELECT * FROM headlines;
