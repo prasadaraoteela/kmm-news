@@ -3,6 +3,8 @@ plugins {
     kotlin("android")
 }
 
+apply(from = "compose_dependencies.gradle.kts")
+
 android {
     compileSdk = 31
     defaultConfig {
