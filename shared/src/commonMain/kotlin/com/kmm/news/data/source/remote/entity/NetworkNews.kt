@@ -8,15 +8,15 @@ import kotlinx.serialization.Serializable
  **/
 @Serializable
 data class NetworkNews(
-    @SerialName("status")
-    val status: String,
+  @SerialName("status")
+  val status: String,
 
-    @SerialName("totalResults")
-    val totalResults: Long,
+  @SerialName("totalResults")
+  val totalResults: Long,
 
-    @SerialName("message")
-    val message: String? = null,
+  @SerialName("message")
+  val message: String? = null,
 
-    @SerialName("articles")
-    val articles: List<NetworkArticle> = emptyList()
+  @SerialName("articles")
+  val articles: List<NetworkArticle> = emptyList()
 )
